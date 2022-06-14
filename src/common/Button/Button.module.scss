@@ -1,0 +1,27 @@
+
+.button {
+  border: 0.2em solid;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+
+  .icon {
+    margin-right: 0.5em;
+  }
+
+}
+
+.primary {
+  border-color: #6a615f;
+  color:  #6a615f;
+  background-color: transparent;
+}
+
+.secondary {
+  background-color: #8d817f;
+  border-color: transparent;
+  color: white;
+}
