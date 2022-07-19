@@ -41,15 +41,6 @@ export function Login() {
                 height="100vh"
                 objectFit="cover"
             />
-
-                    {/*<Image src={flowers} height="10em" position="absolute" top="15px" left="10px" transform="scaleX(-1) rotate(180deg)" />*/}
-                    {/*<Image src={flowers} height="10em" position="absolute" top="15px" right="10px" transform="scaleX(-1) scaleY(-1)" />*/}
-                    {/*<Image src={flowers} height="10em" position="absolute" bottom="20px" right="10px" transform="scaleX(-1)" />*/}
-                    {/*<Image src={flowers} height="10em" position="absolute" bottom="20px" left="10px" />*/}
-
-                    {/*<Text fontSize="6em" color="white" position="absolute" top="10vh" right="10vw">*/}
-                    {/*    Patrik och Pauline*/}
-                    {/*</Text>*/}
         </View>
     );
 }
