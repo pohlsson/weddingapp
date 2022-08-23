@@ -1,0 +1,19 @@
+.container {
+  .inputRow {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .attendingDate {
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+  padding-top: 1em;
+}

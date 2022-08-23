@@ -1,21 +1,40 @@
 .container {
-  height: 30em;
+  height: 60vh;
   width: 80vw;
+  max-width: 1200px;
   background-color: #e7e3e2;
   padding: 1em 4em;
-
-  .header {
-    font-family: WilliamNarasi;
-    font-size: 2em;
-    font-weight: normal;
-  }
-
-  .addGuestButton {
-    margin-bottom: 2em;
-  }
 
   @media (max-width: 768px) {
     padding: 0.5em;
     width: 100vw;
   }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .caption {
+      font-family: WilliamNarasi;
+      font-size: 3em;
+      font-weight: normal;
+    }
+  }
+
+  .content {
+    display: flex;
+
+    .addGuest {
+      padding-right: 4em;
+      flex: 1;
+    }
+
+    .guestList {
+      flex: 2;
+      height: 40vh;
+      overflow-y: auto;
+    }
+  }
+
 }
