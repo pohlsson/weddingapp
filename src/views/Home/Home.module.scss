@@ -19,5 +19,12 @@
   .content {
     position: absolute;
     bottom: 0;
+
+    @media (max-width: 768px) {
+      position: relative;
+      overflow-y: auto;
+      padding-top: 60vh;
+      z-index: 0;
+    }
   }
 }

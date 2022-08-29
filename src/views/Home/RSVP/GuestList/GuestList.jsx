@@ -8,7 +8,7 @@ import Button from "../../../../common/Button/Button";
 const GuestList = ({ guests, onRemoveGuest }) => {
     return (
         <div className={styles.container}>
-            {guests.map(({id, firstName, lastName, foodPreferences, notes}) => (
+            {guests.map(({id, firstName, lastName, foodPreferences, attendingDates, notes}) => (
                 <div key={id} className={styles.guest}>
                     <div className={styles.header}>
                         <div className={styles.guestIconWrapper}>
@@ -28,7 +28,7 @@ const GuestList = ({ guests, onRemoveGuest }) => {
                         </div>
                         <div className={styles.row}>
                             <FontAwesomeIcon icon={faCalendarAlt} className={styles.icon} />
-                            <span>Fredag, Lördag, Söndag</span>
+                            <span>{attendingDates === 'fri-sun' ? "Fredag, lördag, söndag" : "Lördag, söndag"} </span>
                         </div>
                         {notes && (
                             <div className={styles.row}>

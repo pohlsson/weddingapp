@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthenticator } from "@aws-amplify/ui-react";
-import styles from './RSVP.module.scss';
+import styles from './RSVPContainer.module.scss';
 import GuestList from "./GuestList/GuestList";
 import { API, graphqlOperation } from 'aws-amplify';
 import { listGuests } from "../../../graphql/queries";
