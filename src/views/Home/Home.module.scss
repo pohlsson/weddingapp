@@ -10,6 +10,10 @@
   background-size: cover;
   position: relative;
 
+  @media (max-width: 768px) {
+    background: url('../../images/background-mobile.png');
+  }
+
   .header {
     width: 80vw;
     position: absolute;
