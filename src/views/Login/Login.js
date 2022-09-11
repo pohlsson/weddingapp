@@ -22,7 +22,7 @@ export function Login() {
 
     return (
         <View height="100vh" position="relative">
-            <View left="0" right="50vw" bottom="0" height="100vh" position="absolute" display="flex" justifyContent="center" alignItems="center">
+            <View left="10px" right="10px" bottom="0" height="100vh" position="absolute" display="flex" justifyContent="center" alignItems="center">
 
             <View position="absolute" zIndex={2}>
                 <Authenticator components={components}>

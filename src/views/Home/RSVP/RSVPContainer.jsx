@@ -6,10 +6,14 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { listGuests } from "../../../graphql/queries";
 import { createGuest, deleteGuest } from "../../../graphql/mutations";
 import AddGuestForm from "./AddGuestForm/AddGuestForm";
+import strings from "../../../localization/strings";
+import { useSelector } from "react-redux";
 
 const RSVPContainer = () => {
     const [addedGuests, setAddedGuests] = useState([]);
     const { user } = useAuthenticator();
+    const language = useSelector(state => state.language);
+    const { addGuests } = strings[language];
 
     const fetchGuests = async () => {
         try {
@@ -44,7 +48,7 @@ const RSVPContainer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <h2 className={styles.caption}>Anmäl gäster</h2>
+                <h2 className={styles.caption}>{addGuests.header}</h2>
             </div>
             <div className={styles.content}>
                 <div className={styles.addGuest}>

@@ -40,6 +40,20 @@
         }
       }
     }
+
+    .language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+
+      .icon {
+        fill: #c8bdbb;
+        height: 1em;
+        margin: 0 5px;
+      }
+    }
+
   }
 
   .hamburgerMenu {
