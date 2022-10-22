@@ -1,0 +1,97 @@
+.container {
+  height: 60vh;
+  width: 60vw;
+  background-color: #e7e3e2;
+  padding: 1em 4em;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1em;
+    width: 94vw;
+    height: auto;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .caption {
+      font-family: WilliamNarasi;
+      font-size: 3em;
+      font-weight: normal;
+    }
+  }
+
+}
+
+.storyEvent {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .image {
+    width: 10em;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+}
+
+.content {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  transition: all .4s;
+  -moz-transition: all .4s;
+  -webkit-transition:all .4s;
+  -o-transition: all .4s;
+}
+
+.gradient {
+  height: 40px;
+  left: 4em;
+  right: 5em;
+  z-index: 1;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(231,227,226,1) 46%, rgba(177,162,159,0) 100%);
+}
+
+.stripe {
+  display: flex;
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+
+  .leftButton, .rightButton {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 2;
+    background-color: #c8bdbb;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .icon {
+      color: #6a615f;
+    }
+
+  }
+
+  .leftButton {
+    left: 0;
+  }
+
+  .rightButton {
+    right: 0;
+  }
+}
