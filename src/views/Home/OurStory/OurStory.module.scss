@@ -63,7 +63,7 @@
 .stripe {
   display: flex;
   position: relative;
-  height: 235px;
+  height: 230px;
   overflow: hidden;
 
   .leftButton, .rightButton {
@@ -94,4 +94,8 @@
   .rightButton {
     right: 0;
   }
+}
+
+.text {
+  margin-top: 20px;
 }

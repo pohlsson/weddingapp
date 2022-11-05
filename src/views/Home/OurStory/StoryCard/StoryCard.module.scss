@@ -2,10 +2,9 @@
 .container {
   position: relative;
   margin-right: 20px;
-  transform: scale(0.95);
 
   &.selected {
-    transform: scale(1.01);
+
   }
 
   &:hover {
@@ -33,7 +32,7 @@
     box-shadow: 10px 10px 5px -12px rgba(0,0,0,0.75);
 
     &.selected {
-
+      border: 5px solid #fff;
     }
 
     @media (max-width: 768px) {

@@ -64,6 +64,30 @@ const strings = {
         },
         ourStory: {
             header: 'Our story',
+            story: [
+                {
+                    title: '20 aug 2021',
+                    text: 'Its a match! Pauline har ställt in tinders radie på två km för att hon inte orkar träffa någon' +
+                        'som bor allt för långt bort. Patrik hälsar på en kompis i Aspudden och lyckas matcha med Pauline innan han' +
+                        'beger sig hemåt till Åkersberga 38km bort. Efter mycket swipande blev det en match!'
+                },
+                {
+                    title: 'Onsdag 25 augusti',
+                    text: '"Ses på en kaffe idag?" Första dejten blev en spontan kaffe to-go under ett träd i' +
+                        'Vasaparken. Det var en lyckad dejt som ledde till ytterligare dejter både på fredagen och söndagen.'
+                },
+                {
+                    title: '20 aug 2021',
+                    text: 'Its a match! Pauline har ställt in tinders radie på två km för att hon inte orkar träffa någon' +
+                        'som bor allt för långt bort. Patrik hälsar på en kompis i Aspudden och lyckas matcha med Pauline innan han' +
+                        'beger sig hemåt till Åkersberga 38km bort. Efter mycket swipande blev det en match!'
+                },
+                {
+                    title: 'Onsdag 25 augusti',
+                    text: '"Ses på en kaffe idag?" Första dejten blev en spontan kaffe to-go under ett träd i' +
+                        'Vasaparken. Det var en lyckad dejt som ledde till ytterligare dejter både på fredagen och söndagen.'
+                }
+            ]
         }
     }
 };

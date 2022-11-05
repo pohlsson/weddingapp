@@ -32,9 +32,7 @@ const AddGuestForm = ({ onCreateGuest }) => {
                 <span>{addGuests.foodPreferences}</span>
                 <Input onChange={e => setGuestProperty('foodPreferences', e.target.value)}/>
             </div>
-            <div
-                className={styles.inputRow}
-            >
+            <div className={styles.inputRow}>
                 <span>{addGuests.attendingDates}</span>
                 <div className={styles.attendingDate} onClick={(e) => setGuestProperty('attendingDates', e.target.value)}>
                     <input

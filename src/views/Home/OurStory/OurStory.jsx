@@ -20,26 +20,25 @@ const MIN_LEFT = -980;
 
 const OurStory = () => {
     const [left, setLeft] = useState(40);
-    const [selectedCard, setSelectedCard] = useState(0);
+    const [selectedCardId, setSelectedCardId] = useState(0);
     const language = useSelector(state => state.language);
     const { ourStory } = strings[language];
 
+    const selectedCard = ourStory?.story?.[selectedCardId];
+
     const scrollLeft = () => {
         setLeft(oldLeft => oldLeft + 340);
-        if (selectedCard > 0) {
-            setSelectedCard(oldCard => oldCard - 1);
+        if (selectedCardId > 0) {
+            setSelectedCardId(oldCard => oldCard - 1);
         }
     };
 
     const scrollRight = () => {
         setLeft(oldLeft => oldLeft - 340);
-        if (selectedCard < ourStory.story.length - 1) {
-            setSelectedCard(oldCard => oldCard + 1);
+        if (selectedCardId < ourStory.story.length - 1) {
+            setSelectedCardId(oldCard => oldCard + 1);
         }
     };
-
-
-    console.log(left)
 
     return (
         <div className={styles.container}>
@@ -56,11 +55,14 @@ const OurStory = () => {
                 </button>
                 <div className={styles.content} style={{left}}>
                     {ourStory.story.map((story, i) => (
-                            <StoryCard {...story} isSelected={selectedCard === i} image={storyImages[i]} onClick={() => setSelectedCard(i)} />
+                            <StoryCard {...story} isSelected={selectedCardId === i} image={storyImages[i]} onClick={() => setSelectedCardId(i)} />
                         )
                     )}
                 </div>
                 <button className={styles.rightButton} onClick={scrollRight} disabled={left <= MIN_LEFT}><FontAwesomeIcon icon={faChevronRight} className={styles.icon} /></button>
+            </div>
+            <div className={styles.text}>
+                <span>{selectedCard.text}</span>
             </div>
         </div>
     )
