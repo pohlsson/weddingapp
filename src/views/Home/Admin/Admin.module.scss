@@ -1,0 +1,43 @@
+.container {
+  background-color: #e7e3e2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  @media (max-width: 768px) {
+    padding: 1em;
+    margin: 0 0.5em;
+    height: auto;
+  }
+}
+
+.header {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: 0.5em;
+  border-bottom: 1px solid #6a615f;
+}
+
+.guestRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  justify-content: space-between;
+  padding: 0.5em;
+
+  &:nth-child(2n) {
+    background-color: #c8bdbb;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mailText {
+  text-decoration: none;
+  color: inherit;
+}

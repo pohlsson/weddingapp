@@ -1,26 +1,13 @@
 .container {
   height: 60vh;
-  width: 60vw;
   background-color: #e7e3e2;
-  padding: 1em 4em;
+  padding-top: 3em;
   overflow: hidden;
 
   @media (max-width: 768px) {
     padding: 1em;
-    width: 94vw;
+    margin: 0 0.5em;
     height: auto;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .caption {
-      font-family: WilliamNarasi;
-      font-size: 3em;
-      font-weight: normal;
-    }
   }
 
 }
@@ -65,6 +52,11 @@
   position: relative;
   height: 230px;
   overflow: hidden;
+  margin: 0 1.3em;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 
   .leftButton, .rightButton {
     position: absolute;
@@ -72,7 +64,7 @@
     bottom: 0;
     width: 40px;
     z-index: 2;
-    background-color: #c8bdbb;
+    background-color: #e7e3e2;
     border: none;
     cursor: pointer;
 
@@ -98,4 +90,14 @@
 
 .text {
   margin-top: 20px;
+  max-width: 600px;
+  padding: 0 4em;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.mobileCard {
+  padding-bottom: 2em;
 }

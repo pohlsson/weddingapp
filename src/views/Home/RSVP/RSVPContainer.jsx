@@ -8,8 +8,9 @@ import { createGuest, deleteGuest } from "../../../graphql/mutations";
 import AddGuestForm from "./AddGuestForm/AddGuestForm";
 import strings from "../../../localization/strings";
 import { useSelector } from "react-redux";
+import SectionHeader from "../../../common/SectionHeader/SectionHeader";
 
-const RSVPContainer = () => {
+const RSVPContainer = ({pageRef}) => {
     const [addedGuests, setAddedGuests] = useState([]);
     const { user } = useAuthenticator();
     const language = useSelector(state => state.language);
@@ -20,7 +21,7 @@ const RSVPContainer = () => {
             const guestData = await API.graphql(graphqlOperation(listGuests));
             console.log(guestData);
             const guestList = guestData.data.listGuests.items;
-            setAddedGuests(guestList.filter(g => g.addedBy === user.username));
+            setAddedGuests(guestList.filter(g => g.addedBy === user.attributes.email));
         } catch (error) {
             console.log('error on fetching guests', error);
         }
@@ -29,8 +30,10 @@ const RSVPContainer = () => {
     const createNewGuest = async (guest) => {
         const newGuest = {
             ...guest,
-            addedBy: user.username,
+            addedBy: user.attributes.email,
         };
+
+        console.log("NEW GUEST", newGuest);
         await API.graphql(graphqlOperation(createGuest, { input: newGuest }));
         await fetchGuests();
     };
@@ -44,12 +47,9 @@ const RSVPContainer = () => {
         fetchGuests();
     }, []);
 
-
     return (
         <div className={styles.container}>
-            <div className={styles.header}>
-                <h2 className={styles.caption}>{addGuests.header}</h2>
-            </div>
+            <SectionHeader pageRef={pageRef} text={addGuests.header} />
             <div className={styles.content}>
                 <div className={styles.addGuest}>
                     <AddGuestForm onCreateGuest={createNewGuest} />

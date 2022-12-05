@@ -1,11 +1,22 @@
 
 .input {
-  border: 1px solid #6a615f;
+  border: 1px solid #d3cac8;
   border-radius: 4px;
   width: 100%;
-  padding: 0.2em;
+  padding: 0.2em 6px;
+  color: #6a615f;
+  height: 34px;
+  background-color: #fff;
+
+  &:active {
+    border: none;
+  }
+  &:focus {
+    border: none;
+  }
 
   &:focus-visible {
     border: 1px solid transparent;
+    outline: 1px solid #6a615f;
   }
 }

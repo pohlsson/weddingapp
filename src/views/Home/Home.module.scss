@@ -6,13 +6,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('../../images/background3.jpg');
+  background: url('../../images/blurred3.jpg');
   background-size: cover;
   position: relative;
 
-
   @media (max-width: 768px) {
-    background: url('../../images/background-mobile.png');
+    background: url('../../images/blurred3.jpg');
   }
 
   .header {
@@ -22,9 +21,19 @@
   }
 
   .content {
-    position: absolute;
+    padding-top: 40vh;
+    width: 50vw;
+    max-width: 1000px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     @media (max-width: 768px) {
+      width: 100%;
       position: relative;
       overflow-y: auto;
       padding-top: 60vh;

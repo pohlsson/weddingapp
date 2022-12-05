@@ -1,0 +1,68 @@
+
+.container {
+  background-color: #e7e3e2;
+  padding-top: 3em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 1em;
+    margin: 0 0.5em;
+    height: auto;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 10px;
+  padding: 0 4em;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.toastMasterContent {
+  display: flex;
+  max-height: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.toastMasterImageWrapper {
+  flex: 1;
+  padding-left: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: end;
+
+  @media (max-width: 768px) {
+    margin-top: 1em;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .phoneNr {
+    color: #6a615f;
+    text-decoration: none;
+    font-size: 0.8em;
+  }
+
+  .toastMasterImage {
+    width: 4em;
+    height: 4em;
+    background-size: contain;
+    background-image: url('../../../images/jonas.jpg');
+    border-radius: 50%;
+    border: 2px solid #6a615f;
+  }
+}

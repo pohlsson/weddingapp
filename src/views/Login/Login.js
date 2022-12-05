@@ -1,5 +1,5 @@
 import { Authenticator, Flex, Grid, Image, Text, useTheme, View } from "@aws-amplify/ui-react";
-import backgroundImage from '../../images/background3.jpg';
+import backgroundImage from '../../images/blurred3.jpg';
 
 import { Header } from "./Header";
 import { Footer } from "./Footer";

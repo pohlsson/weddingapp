@@ -5,29 +5,21 @@
   height: calc(4em + 2px);
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   background: linear-gradient(180deg, rgba(177,162,159,1) 0%, rgba(177,162,159,0) 100%);
+
   @media (max-width: 768px) {
-    justify-content: left;
     padding: 10px 20px;
-    background: #8d817f;
-    border-bottom: #6a615f 3px solid;
     z-index: 2;
-    box-shadow: 6px 9px 15px -11px #000000;
   }
 
-
   .header {
-    width: 80vw;
-    max-width: 1200px;
+    width: 100vw;
+    padding: 0 4em;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
-
-    .navigation {
-      display: flex;
-    }
 
     .buttons {
       display: flex;
@@ -53,10 +45,9 @@
     background-color: #8d817f;
     padding: 20px;
     top: 4em;
-    left: 0;
+    right: 0;
     z-index: 2;
-    border-bottom: #6a615f 3px solid;
-    border-right: #6a615f 2px solid;
+    border-radius: 2px;
     display: none;
     box-shadow: 6px 9px 15px -10px #000000;
 

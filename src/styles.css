@@ -4,6 +4,7 @@
 
 html {
   overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
 }
 
 :root {
+  --amplify-components-button-primary-background-color: "#6a615f" !important;
   --amplify-fonts-default-variable: "Open Sans";
   --amplify-fonts-default-static: "Open Sans";
   --amplify-colors-brand-primary-10: #e7e3e2;
@@ -38,7 +40,6 @@ body {
   --amplify-colors-border-tertiary: var(--amplify-colors-neutral-10);
   --amplify-colors-background-secondary: var(--amplify-colors-brand-primary-10);
   --amplify-components-tabs-item-border-color: var(--amplify-colors-neutral-60);
-  --amplify-components-button-primary-background-color: #757666;
 
   --amplify-radii-small: 0;
   --amplify-radii-medium: 0;

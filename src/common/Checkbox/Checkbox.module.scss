@@ -1,0 +1,24 @@
+.checkboxWrapper {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  height: 2em;
+  width: 2em;
+  background-color: #c8bdbb;
+  border: 1px solid #c8bdbb;
+  border-radius: 4px;
+
+  &.checked {
+    background-color: #6a615f;
+  }
+}
+
+.icon {
+  color: #c8bdbb;
+  height: 100%;
+}

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import styles from './Header.module.scss';
@@ -13,17 +13,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { setLanguage } from "../../../actions/uiActions";
 
-const Header = () => {
+const Header = ({rsvpRef, ourStoryRef, informationRef}) => {
     const { signOut } = useAuthenticator();
     const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
-    const hamburgerRef = useRef();
     const dispatch = useDispatch();
     const language = useSelector(state => state.language);
-    const location = useLocation();
 
-    console.log(location.pathname);
-
-    useClickedOutside(hamburgerRef, () =>setHamburgerIsOpen(false));
+    const scrollToRef = (ref) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' })
+    };
 
     const changeLanguage = () => {
         const newLanguage = language === 'swedish' ? 'english': 'swedish';
@@ -36,15 +34,6 @@ const Header = () => {
         <div className={styles.container}>
             <BrowserView>
                 <header className={styles.header}>
-                    <nav className={styles.navigation}>
-                        <div className={classNames(styles.link, location.pathname === '/rsvp'&& styles.selected)}>
-                            <Link to="/rsvp">{header.rsvp}</Link>
-                        </div>
-                        <div className={classNames(styles.link, location.pathname === '/our-story'&& styles.selected)}>
-                            <Link to="/our-story">{header.ourStory}</Link>
-                        </div>
-                    </nav>
-
                     <div className={styles.buttons}>
                         <Button className={styles.language} onClick={changeLanguage}>
                             <FontAwesomeIcon icon={faGlobe} className={styles.icon} />
@@ -55,13 +44,16 @@ const Header = () => {
                 </header>
             </BrowserView>
             <MobileView>
-                <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} color="#e7e3e2"/>
-                <nav className={classNames(styles.hamburgerMenu, hamburgerIsOpen && styles.show)} ref={hamburgerRef}>
+                <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} color="#fff"/>
+                <nav className={classNames(styles.hamburgerMenu, hamburgerIsOpen && styles.show)}>
                     <div className={classNames(styles.item, styles.link)}>
-                        <Link to="/rsvp">{header.rsvp}</Link>
+                        <a onClick={() => scrollToRef(rsvpRef)}>{header.rsvp}</a>
                     </div>
                     <div className={classNames(styles.item, styles.link)}>
-                        <Link to="/our-story">{header.ourStory}</Link>
+                        <a onClick={() => scrollToRef(informationRef)}>{header.information}</a>
+                    </div>
+                    <div className={classNames(styles.item, styles.link)}>
+                        <a onClick={() => scrollToRef(ourStoryRef)}>{header.ourStory}</a>
                     </div>
                     <div className={styles.divider} />
                     <div className={styles.item} onClick={changeLanguage}>
@@ -72,7 +64,6 @@ const Header = () => {
                         <FontAwesomeIcon icon={faRightFromBracket} className={styles.icon} />
                         <span>{header.logOut}</span>
                     </div>
-
                 </nav>
             </MobileView>
         </div>

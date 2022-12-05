@@ -9,13 +9,11 @@ import React from "react";
 
 Amplify.configure(awsExports);
 
-
 export default function App() {
     const { user } = useAuthenticator();
 
     if (user) {
         return <Home />;
     }
-
     return <Login />;
 }

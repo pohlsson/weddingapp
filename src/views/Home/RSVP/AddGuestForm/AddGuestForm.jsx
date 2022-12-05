@@ -5,11 +5,39 @@ import Button, { ButtonTypes } from "../../../../common/Button/Button";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import strings from "../../../../localization/strings";
+import ReactSelect from 'react-select';
+import classNames from "classnames";
 
 const AddGuestForm = ({ onCreateGuest }) => {
     const [guest, setGuest] = useState({});
     const language = useSelector(state => state.language);
     const { addGuests } = strings[language];
+
+    const dropdownStyle = {
+        option: (provided, state) => ({
+            ...provided,
+            color: "#6a615f",
+            backgroundColor: state.isSelected ? '#d3cac8' : '#fff',
+            borderColor: "d3cac8",
+            cursor: "pointer",
+        }),
+        valueContainer: () => ({
+            display: "flex",
+            flex: "1",
+            alignItems: "center",
+            paddingLeft: "6px",
+        }),
+        control: (provided, state) => ({
+            display: "flex",
+            backgroundColor: "#fff",
+            opacity: state.isDisabled ? 0.4 : 1,
+            cursor: state.isDisabled ? "not-allowed" : "pointer",
+            pointerEvents: "all !important",
+            border: state.menuIsOpen ? '1px solid #6a615f' : "1px solid #d3cac8",
+            borderRadius: "4px",
+            height: "34px",
+        }),
+    };
 
     const setGuestProperty = (property, value) => {
         setGuest({
@@ -19,43 +47,59 @@ const AddGuestForm = ({ onCreateGuest }) => {
     };
 
     return (
+        <>
         <div className={styles.container}>
-            {<div className={styles.inputRow}>
-                <span>{addGuests.firstName}</span>
-                <Input onChange={e => setGuestProperty('firstName', e.target.value)}/>
-            </div>}
-            <div className={styles.inputRow}>
-                <span>{addGuests.lastName}</span>
-                <Input onChange={e => setGuestProperty('lastName', e.target.value)}/>
-            </div>
-            <div className={styles.inputRow}>
-                <span>{addGuests.foodPreferences}</span>
-                <Input onChange={e => setGuestProperty('foodPreferences', e.target.value)}/>
-            </div>
-            <div className={styles.inputRow}>
-                <span>{addGuests.attendingDates}</span>
-                <div className={styles.attendingDate} onClick={(e) => setGuestProperty('attendingDates', e.target.value)}>
-                    <input
-                        type="radio"
-                        value="fri-sun"
-                        name="attendingDates"
-                    />
-                    <span>{addGuests.fridayToSunday}</span>
+            <div className={styles.column}>
+                <div className={styles.inputRow}>
+                    <span className={styles.label}>{addGuests.firstName}</span>
+                    <Input onChange={e => setGuestProperty('firstName', e.target.value)}/>
                 </div>
-                <div className={styles.attendingDate} onClick={(e) => setGuestProperty('attendingDates', e.target.value)}>
-                    <input
-                        type="radio"
-                        name="attendingDates"
-                        value="sat-sun"
-                    />
-                    <span>{addGuests.saturdayToSunday}</span>
+                <div className={styles.inputRow}>
+                    <span className={styles.label}>{addGuests.lastName}</span>
+                    <Input onChange={e => setGuestProperty('lastName', e.target.value)}/>
+                </div>
+                <div className={styles.inputRow}>
+                    <span className={styles.label}>{addGuests.foodPreferences}</span>
+                    <Input onChange={e => setGuestProperty('foodPreferences', e.target.value)}/>
                 </div>
             </div>
-            <div className={styles.inputRow}>
-                <span>{addGuests.other}</span>
-                <Input onChange={e => setGuestProperty('notes', e.target.value)}/>
+            <div className={styles.column}>
+                <div className={styles.inputRow}>
+                    <span className={styles.label}>{addGuests.other}</span>
+                    <Input onChange={e => setGuestProperty('notes', e.target.value)}/>
+                </div>
+                <div className={styles.inputRow}>
+                    <span className={styles.label}>{addGuests.attendingDates}</span>
+                    <ReactSelect
+                        className={styles.select}
+                        isSearchable={false}
+                        styles={dropdownStyle}
+                        placeholder={''}
+                        onChange={({value}) => setGuestProperty('attendingDates', value)}
+                        options={[
+                            {label: addGuests.fridayToSunday, value: "fri-sun"},
+                            {label: addGuests.saturdayToSunday, value: "sat-sun"}
+                        ]}
+                    />
+                </div>
+                    <div className={styles.inputRow}>
+                        <span className={classNames(styles.label, !(guest?.attendingDates === 'fri-sun' || guest?.attendingDates === 'fri-sun-takes-buss') && styles.disabled)}>{addGuests.takesBuss}</span>
+                        <ReactSelect
+                            isSearchable={false}
+                            isDisabled={!(guest?.attendingDates === 'fri-sun' || guest?.attendingDates === 'fri-sun-takes-buss')}
+                            styles={dropdownStyle}
+                            placeholder={''}
+                            onChange={({value}) => setGuestProperty('attendingDates', value)}
+                            options={[
+                                {label: addGuests.yes, value: "fri-sun-takes-buss"},
+                                {label: addGuests.no, value: "fri-sun"}
+                            ]}
+                        />
+                    </div>
+
             </div>
-            <div className={styles.footer}>
+        </div>
+            <div className={styles.buttonContainer}>
                 <Button
                     onClick={() => onCreateGuest(guest)}
                     icon={faPlus}
@@ -64,7 +108,7 @@ const AddGuestForm = ({ onCreateGuest }) => {
                     {addGuests.addGuest}
                 </Button>
             </div>
-        </div>
+            </>
     )
 
 };
