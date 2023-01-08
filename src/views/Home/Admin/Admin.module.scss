@@ -41,3 +41,8 @@
   text-decoration: none;
   color: inherit;
 }
+
+.guestList {
+  max-height: 80vh;
+  overflow-y: auto;
+}

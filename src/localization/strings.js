@@ -24,7 +24,7 @@ const strings = {
             takesBuss: 'Önskar ta buss från Stockholm'
         },
         ourStory: {
-            header: 'Våran historia',
+            header: 'Vår historia',
             story: [
                 {
                     title: '20 aug 2021',
