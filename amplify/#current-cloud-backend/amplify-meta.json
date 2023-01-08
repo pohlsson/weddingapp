@@ -1,0 +1,102 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-weddingapp-dev-83832-authRole",
+      "UnauthRoleArn": "arn:aws:iam::619937800594:role/amplify-weddingapp-dev-83832-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::619937800594:role/amplify-weddingapp-dev-83832-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-weddingapp-dev-83832-deployment",
+      "UnauthRoleName": "amplify-weddingapp-dev-83832-unauthRole",
+      "StackName": "amplify-weddingapp-dev-83832",
+      "StackId": "arn:aws:cloudformation:eu-north-1:619937800594:stack/amplify-weddingapp-dev-83832/7069d460-072d-11ed-a5b5-067d9ed46472",
+      "AmplifyAppId": "d3ra3hyzsvnml"
+    }
+  },
+  "auth": {
+    "weddingappb1f3a751": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "PHONE_NUMBER"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-weddingapp-dev-83832-deployment/amplify-cfn-templates/auth/weddingappb1f3a751-cloudformation-template.json",
+        "logicalId": "authweddingappb1f3a751"
+      },
+      "lastPushTimeStamp": "2022-08-23T11:40:21.975Z",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::619937800594:role/snsb1f3a75183832-dev",
+        "UserPoolId": "eu-north-1_vCyuOQmIq",
+        "AppClientIDWeb": "1mcv0umvh0jfhqddh6qjenbtru",
+        "AppClientID": "d2jtm0j7miue6v6m7bsbinnc8",
+        "IdentityPoolId": "eu-north-1:a732f2d8-4b8c-49bf-b2e7-5f382c48aa7f",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-north-1:619937800594:userpool/eu-north-1_vCyuOQmIq",
+        "IdentityPoolName": "weddingappb1f3a751_identitypool_b1f3a751__dev",
+        "UserPoolName": "weddingappb1f3a751_userpool_b1f3a751"
+      },
+      "lastPushDirHash": "P1Bu/J/ySaNBvQsdGiikR3Jpd5k="
+    }
+  },
+  "api": {
+    "weddingapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-08-23T11:31:00.925Z",
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "bzy5iv5y2nasjfzlmihserboxm",
+        "GraphQLAPIEndpointOutput": "https://pvv7eg25enanfkhrj2wiisyrqy.appsync-api.eu-north-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-xubfvxhqyzfdtlslyj5igoed34"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-weddingapp-dev-83832-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiweddingapp"
+      },
+      "lastPushTimeStamp": "2022-08-23T11:40:24.236Z",
+      "lastPushDirHash": "/l6A/CBKVB28RHUaPMlyocu+VrE="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-weddingapp-dev-83832-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2022-08-23T11:40:21.991Z",
+      "output": {},
+      "lastPushDirHash": "ZKzscrjqUL8QhcFlcyOvuBhUG3g="
+    }
+  }
+}
