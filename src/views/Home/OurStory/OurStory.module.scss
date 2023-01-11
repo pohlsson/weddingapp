@@ -1,5 +1,5 @@
 .container {
-  height: 60vh;
+  height: 80vh;
   background-color: #e7e3e2;
   padding-top: 3em;
   overflow: hidden;
@@ -9,7 +9,6 @@
     margin: 0 0.5em;
     height: auto;
   }
-
 }
 
 .storyEvent {
@@ -32,10 +31,10 @@
   display: flex;
   position: absolute;
   z-index: 1;
-  transition: all .4s;
-  -moz-transition: all .4s;
-  -webkit-transition:all .4s;
-  -o-transition: all .4s;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 .gradient {
@@ -44,7 +43,11 @@
   right: 5em;
   z-index: 1;
   position: absolute;
-  background: linear-gradient(180deg, rgba(231,227,226,1) 46%, rgba(177,162,159,0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(231, 227, 226, 1) 46%,
+    rgba(177, 162, 159, 0) 100%
+  );
 }
 
 .stripe {
@@ -58,7 +61,8 @@
     margin: 0;
   }
 
-  .leftButton, .rightButton {
+  .leftButton,
+  .rightButton {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -76,7 +80,6 @@
     .icon {
       color: #6a615f;
     }
-
   }
 
   .leftButton {

@@ -2,7 +2,6 @@
   border: #c8bdbb 1px solid;
   border-radius: 4px;
 
-
   .header {
     display: flex;
     align-items: center;
@@ -26,7 +25,6 @@
     }
   }
 
-
   .content {
     max-height: 0;
     overflow-y: hidden;
@@ -44,8 +42,13 @@
         flex-direction: column;
       }
 
-      .text {}
+      .text {
+        a {
+          font-weight: bold;
 
+          color: #6a615f;
+        }
+      }
     }
   }
 }
