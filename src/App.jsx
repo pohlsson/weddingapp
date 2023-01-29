@@ -10,10 +10,11 @@ import React from "react";
 Amplify.configure(awsExports);
 
 export default function App() {
-    const { user } = useAuthenticator();
+  const { user } = useAuthenticator();
+  document.title = "pp2023 - Patrik och Paulines bröllop";
 
-    if (user) {
-        return <Home />;
-    }
-    return <Login />;
+  if (user) {
+    return <Home />;
+  }
+  return <Login />;
 }

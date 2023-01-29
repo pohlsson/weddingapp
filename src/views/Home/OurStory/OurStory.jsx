@@ -5,10 +5,13 @@ import strings from "../../../localization/strings";
 import aspudden from "../../../images/aspudden.jpeg";
 import vasaparken from "../../../images/vasaparken.jpg";
 import mariestad from "../../../images/mariestad.jpeg";
-import danderyds from "../../../images/danderyds.jpeg";
+import danderyds from "../../../images/danderyd.jpeg";
 import lissabon from "../../../images/lissabon.jpg";
+import hornstull from "../../../images/hornstull.jpg";
+import akersberga from "../../../images/akersberga.jpg";
+import ica from "../../../images/ica.jpg";
 import bebis from "../../../images/bebis.jpg";
-import birkastan from "../../../images/birkastan.jpeg";
+import mallis from "../../../images/mallis.jpg";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import StoryCard from "./StoryCard/StoryCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,13 +27,15 @@ const storyImages = [
   danderyds,
   lissabon,
   mariestad,
-  vasaparken,
+  ica,
+  hornstull,
   bebis,
-  birkastan,
+  mallis,
+  akersberga,
 ];
 
 const MAX_LEFT = 40;
-const MIN_LEFT = -2100;
+const MIN_LEFT = -3000;
 
 const OurStory = ({ pageRef }) => {
   const [left, setLeft] = useState(isMobile ? 0 : 40);
