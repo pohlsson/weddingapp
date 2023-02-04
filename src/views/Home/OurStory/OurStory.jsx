@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./OurStory.module.scss";
 import { useSelector } from "react-redux";
 import strings from "../../../localization/strings";
-import aspudden from "../../../images/aspudden.jpeg";
+import tinder from "../../../images/Tinder5.png";
 import vasaparken from "../../../images/vasaparken.jpg";
 import mariestad from "../../../images/mariestad.jpeg";
 import danderyds from "../../../images/danderyd.jpeg";
@@ -22,7 +22,7 @@ import {
 import SectionHeader from "../../../common/SectionHeader/SectionHeader";
 
 const storyImages = [
-  aspudden,
+  tinder,
   vasaparken,
   danderyds,
   lissabon,
