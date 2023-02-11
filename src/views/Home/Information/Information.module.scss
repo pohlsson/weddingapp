@@ -1,15 +1,42 @@
 
+.header {
+  background-color: #7f8b8d;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  padding: 1em;
+  line-height: 100%;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 0.75em 0.5em;
+    margin: 0 8px;
+  }
+
+}
+.title {
+  //border-right: 3px solid white;
+  //padding-right: 3px;
+  flex: 1;
+}
+
+.year {
+  flex: 1;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
 .container {
   background-color: #e7e3e2;
-  padding-top: 3em;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 
   @media (max-width: 768px) {
     padding: 1em;
-    margin: 0 0.5em;
+    margin: 0 8px;
     height: auto;
+    box-sizing: border-box;
   }
 }
 
@@ -53,7 +80,6 @@
 
   .phoneNr {
     color: #6a615f;
-    text-decoration: none;
     font-size: 0.8em;
   }
 
@@ -61,7 +87,7 @@
     width: 4em;
     height: 4em;
     background-size: contain;
-    background-image: url('../../../images/jonas.jpg');
+    background-image: url('../../../images/philip.jpg');
     border-radius: 50%;
     border: 2px solid #6a615f;
   }

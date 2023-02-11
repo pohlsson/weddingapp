@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./OurStory.module.scss";
 import { useSelector } from "react-redux";
 import strings from "../../../localization/strings";
@@ -20,9 +20,28 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import SectionHeader from "../../../common/SectionHeader/SectionHeader";
+const contentful = require("contentful");
+
+const client = contentful.createClient({
+  space: "0vnrdhavlmrm",
+  accessToken: "_oVxGH7dZ9rdh0b_YNziUCwC26cB7CyY3CoK1oXE4Dg"
+});
+
+const sortImages = (a, b) => {
+  const aOrder = a.fields.order;
+  const bOrder = b.fields.order;
+  if (aOrder < bOrder) {
+    return -1;
+  }
+  if (aOrder > bOrder) {
+    return 1;
+  }
+  return 0;
+};
+
 
 const storyImages = [
-  tinder,
+  "http://s3.amazonaws.com/pp2030-images/Tinder5.jpg",
   vasaparken,
   danderyds,
   lissabon,
@@ -40,8 +59,20 @@ const MIN_LEFT = -3000;
 const OurStory = ({ pageRef }) => {
   const [left, setLeft] = useState(isMobile ? 0 : 40);
   const [selectedCardId, setSelectedCardId] = useState(0);
+  const [images, setImages] = useState([]);
   const language = useSelector((state) => state.language);
   const { ourStory } = strings[language];
+
+  useEffect(() => {
+    client
+        .getEntries()
+        .then(({items}) => {
+          const _images = items.sort(sortImages).map(({fields}) => fields.image.fields);
+          setImages(_images);
+        })
+        .catch(err => console.log(err));
+  }, []);
+
 
   const selectedCard = ourStory?.story?.[selectedCardId];
 
@@ -61,12 +92,12 @@ const OurStory = ({ pageRef }) => {
 
   return (
     <div className={styles.container}>
-      <SectionHeader pageRef={pageRef} text={ourStory.header} />
+      <SectionHeader pageRef={pageRef} title={ourStory.header} />
       <MobileView>
         <div>
           {ourStory.story.map((story, i) => (
             <div className={styles.mobileCard} key={i}>
-              <StoryCard {...story} image={storyImages[i]} isSelected />
+              <StoryCard {...story} image={images[i]} isSelected />
               <div className={styles.text}>
                 <span>{story.text}</span>
               </div>
@@ -88,8 +119,7 @@ const OurStory = ({ pageRef }) => {
               <StoryCard
                 {...story}
                 isSelected={selectedCardId === i}
-                image={storyImages[i]}
-                onClick={() => setSelectedCardId(i)}
+                image={images[i]}
                 key={i}
               />
             ))}

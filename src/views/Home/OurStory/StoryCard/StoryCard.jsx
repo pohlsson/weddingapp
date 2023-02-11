@@ -3,10 +3,9 @@ import styles from './StoryCard.module.scss';
 import { Badge } from "../../../../common/Badge/Badge";
 import classNames from "classnames";
 
-const StoryCard = ({title, text, image, isSelected, onClick}) => {
-
+const StoryCard = ({title, text, image, isSelected}) => {
     return (
-        <div className={classNames(styles.container, isSelected && styles.selected)} onClick={onClick}>
+        <div className={classNames(styles.container, isSelected && styles.selected)}>
             <div className={styles.title}>
                 <Badge text={title} />
             </div>
@@ -16,7 +15,7 @@ const StoryCard = ({title, text, image, isSelected, onClick}) => {
                     <div className={styles.text}>{text}</div>
                 </>
             )}
-            <img src={image} className={classNames(styles.image, isSelected && styles.selected)} />
+            <img src={image?.file?.url} className={classNames(styles.image, isSelected && styles.selected)} />
         </div>
     );
 };

@@ -1,6 +1,8 @@
 const strings = {
   swedish: {
     header: {
+      pageHeader: "Patrik och Paulines bröllop",
+      year: "15-17 september 2023",
       rsvp: "OSA",
       ourStory: "Vår historia",
       information: "Information",
@@ -19,7 +21,7 @@ const strings = {
       yes: "Ja",
       no: "Nej",
       other: "Övrigt",
-      addGuest: "Lägg till gäst",
+      addGuest: "Anmäl gäst",
       takesBuss: "Wants to take the buss on Friday",
     },
     ourStory: {
@@ -27,13 +29,13 @@ const strings = {
       story: [
         {
           title: "20 augusti 2021",
-          text: "It's a match! Trots det långa avståndet mellan Åkersberga och Aspudden lyckas dom matcha när Patrik hälsar på hos en kompis.",
+          text: "It's a match! Trots det långa avståndet mellan Åkersberga och Aspudden lyckas dom matcha när Patrik hälsar på hos en kompis i Aspudden.",
         },
         {
           title: "25 augusti 2021",
           text:
             '"Ses på en kaffe idag?" Första dejten blev en spontan kaffe to-go under ett träd i ' +
-            "Vasaparken på en onsdag eftmiddag. Det var en lyckad dejt som ledde till ytterligare dejter både på fredagen och söndagen.",
+            "Vasaparken på en onsdag eftermiddag. Det var en lyckad dejt som ledde till ytterligare dejter både på fredagen och söndagen.",
         },
         {
           title: "17 september 2021",
@@ -45,7 +47,7 @@ const strings = {
         },
         {
           title: "25 februari 2022",
-          text: "Pauline bjuder Patrik på en weekend i Mariestad. Beslutet om att gifta sig är nu taget och tanken var att Mariestad kunde vara en möjlig plats för detta. På kvällen efter en romantisk middag beställer Patrik och Pauline ringarna.",
+          text: "På en romantisk weekend i Mariestad tas beslutet om att gifta sig.",
         },
         {
           title: "3 april 2022",
@@ -53,7 +55,7 @@ const strings = {
         },
         {
           title: "30 juli 2022",
-          text: "Patrik flyttar in hos Pauline i Hornstull, det inleds med en uthomsbio i Tanto.",
+          text: "Patrik flyttar in hos Pauline i Hornstull och det inleds med en uthomsbio i Tanto.",
         },
         {
           title: "4 augusti 2022",
@@ -65,7 +67,7 @@ const strings = {
         },
         {
           title: "31 december 2022",
-          text: "Pauline och Patrik flyttar till Åkersberga och börjar det nya året där.",
+          text: "Det nya året firas i Åkersberga och snart flyttar Pauline och Patrik till deras lägenheten i Birkastan.",
         },
       ],
     },
@@ -76,12 +78,12 @@ const strings = {
         text:
           "Ni väljer om ni vill stanna en natt eller två på Lidö. Här bor man antingen intill värdshuset där festen är\n" +
           "eller i gäststugor 7 min från värdshuset. Vi kommer att boka boende till er när ni anmält vilka dagar ni\n" +
-          "närvarar. En natt kostar kring 700 kr/person och 2 nätter 1400 kr. Dessa priser kan komma att justeras något då värdshuset inte satt de slutgiltiga priserna för året. Frukostbuffé, städning, sänglinne och handdukar\n" +
-          "ingår. Det går att hyra spjälsäng.",
+          "närvarar. Boende kostar 750 kr/natt för ett dubbelrum. Det tillkommer även 195kr/person för middag om man kommer redan på fredagen. Frukostbuffé, städning, sänglinne och handdukar\n" +
+          "ingår.",
       },
       location: {
         title: "Plats",
-        text: "Bröllopet kommer att vara på Lidö värdshus, på den vackra skärgårdsön Lidö en bit utanför Norrtälje. Mer information om transport kommer senare.",
+        text: `Bröllopet äger rum på Lidö värdshus, på den vackra skärgårdsön Lidö en bit utanför Norrtälje. Information om hur man tar sig dit finns på <a href="https://lidovardshus.com/hitta-hit/">Lidö värdshus hemsida</a>. Vi kommer att ordna en båt från Räfsnäs brygga till Lidö på fredagen och en på lördagen. Information om tider kommer senare.`,
       },
       children: {
         title: "Barn",
@@ -89,20 +91,43 @@ const strings = {
       },
       clothes: {
         title: "Klädsel",
-        text: "Klädkod på bröllopet är mörk kostym.",
+        text: "Klädkod för bröllopet är mörk kostym.",
       },
       gifts: {
         title: "Presenter",
-        text: 'Den största gåvan vi kan önska är att ni närvarar under vår bröllopshelg. Önskar ni ändå ge någonting så får ni gärna skicka ett biddrag till <a href="https://www.hjart-lungfonden.se/stod-oss/gava/">hjärt of lungfonden</a> - som är en hjälporganisation som står oss nära.',
+        text: 'Den största gåvan vi kan önska är att ni närvarar under vår bröllopshelg. Önskar ni ändå ge någonting så får ni gärna skicka ett bidrag till vår <a href="https://www.hjart-lungfonden.se/Egen-Insamling/insamling/pauline-patrik-brollopsinsamling">insamling</a> hos Hjärt-Lungfonden, en hjälporganisation som står oss nära.',
+      },
+      program: {
+        title: "Program",
+        text:
+            '\n' +
+            '<b>Fredag 15/9</b></br>' +
+            'Båt från Räfnäs brygga kl 17.00</br>' +
+            'Middag</br>' +
+            'Bastu och badtunna</br>' +
+            '</br>' +
+            '<b>Lördag 16/9</b></br>' +
+            'Lunch 12:00</br>' +
+            'Båt från Räfnäs brygga kl. 13:30</br>' +
+            'Vigselakt kl 15.00</br>' +
+            'Bröllopsmiddag</br>' +
+            '</br>' +
+            '<b>Söndag 17/9</b></br>' +
+            'Frukost kl. 08:30-10:00</br>' +
+            'Båt till Räfnäs brygga kl. 11:30</br></br>' +
+            'Tiderna är preliminära och kan komma att ändras närmare bröllopet.'
+        ,
       },
       toastMaster: {
         title: "Toastmaster",
-        text: "Patriks bror Jonas kommer att vara toastmaster på bröllopet. Om ni önskar hålla tal eller framföra något annat - vänligen kontakta Jonas.",
+        text: "Paulines bror Philip kommer att vara toastmaster på bröllopet. Om ni önskar hålla tal eller framföra något annat - vänligen kontakta Philip.",
       },
     },
   },
   english: {
     header: {
+      pageHeader: "Patrik and Pauline's wedding",
+      year: "15-17 September 2023",
       rsvp: "RSVP",
       ourStory: "Our story",
       information: "Information",
@@ -146,19 +171,19 @@ const strings = {
         },
         {
           title: "25 februari 2022",
-          text: "Pauline invites Patrik to a weekend in Mariestad. The decision to get married has now been made and the idea was that Mariestad could be a possible place for this. In the evening after a romantic dinner, Patrik and Pauline order the rings.",
-        },
+          text: "On a romantic weekend in Mariestad, they decide to get married.",
+    },
         {
           title: "3 april 2022",
           text: "The rings arrive in the mail and Partik and Pauline propose to each other outside the mail office in Åkersberga.",
         },
         {
           title: "30 juli 2022",
-          text: "Patrik moves in with Pauline in Hornstull, it begins with an outdoor cinema in the park.",
+          text: "Patrik moves in with Pauline in Hornstull, and it begins with an outdoor cinema in the park.",
         },
         {
           title: "4 august 2022",
-          text: "Two will be three, we are expecting!",
+          text: "Two will be three, Patrik and Pauline are expecting!",
         },
         {
           title: "8 august 2022",
@@ -166,7 +191,7 @@ const strings = {
         },
         {
           title: "31 december 2022",
-          text: "Pauline and Patrik move to Åkersberga and start the new year there.",
+          text: "The new year is celebrated in Åkersberga, and soon Pauline and Patrik will move to their new apartment in Birkastan.",
         },
       ],
     },
@@ -177,12 +202,12 @@ const strings = {
         text:
           "You choose whether you want to stay one night or two on Lidö. Here you either live next to the inn where the party is,\n" +
           "or in guest cabins 7 minutes from the inn. We will book accommodation for you when you have notified which days you\n" +
-          "attend. One night costs around SEK 700/person and 2 nights SEK 1400. These prices may be adjusted as the inn has not set the final prices for the year. Breakfast buffet, cleaning, bed linen and towels\n" +
-          "are included. It is possible to rent a crib.",
+          "attend. One room costs SEK 750 and you can stay up to two people in one room. Dinner on Friday is SEK 195/person if you decide to come on Friday. Breakfast buffet, cleaning, bed linen and towels\n" +
+          "are included.",
       },
       location: {
         title: "Location",
-        text: "The wedding will be held at Lidö inn, on the beautiful archipelago island of Lidö, just outside of Norrtälje. Innformation about transportation will follow.",
+        text: `The wedding will be held at Lidö värdshus, one hour from Stockholm on the beautiful archipelago island of Lidö. Information on how to get there can be found on <a href="https://lidovardshus.com/hitta-hit/">Lidö värdshus's home page</a>. We will arrange a boat from "Räfnäs brygga" to Lidö on Friday, and one on Saturday. More information regarding times will come later.`,
       },
       children: {
         title: "Children",
@@ -194,11 +219,28 @@ const strings = {
       },
       gifts: {
         title: "Gifts",
-        text: 'The greatest gift we could wish for is for you to be present during our wedding weekend. If you still wish to give us something, please send a donation to <a href="https://www.hjart-lungfonden.se/stod-oss/gava/">hjärt och lungfonden</a> - which is an aid organization close to us.',
+        text: 'The greatest gift we could wish for is for you to be present during our wedding weekend. If you still wish to give us something, please send a donation to <a href="https://www.hjart-lungfonden.se/Egen-Insamling/insamling/pauline-patrik-brollopsinsamling">Hjärt-Lungfonden</a> - which is an aid organization close to us.',
+      },
+      program: {
+        title: "Program",
+        text: '<b>Friday 15/9</b></br>' +
+            'Boat from Räfnäs brygga 17.00</br>' +
+            'Dinner</br>' +
+            'Sauna and hot tub</br>' +
+            '</br>' +
+            '<b>Saturday 16/9</b></br>' +
+            'Lunch 12:00</br> Boat from Räfnäs brygga 13:30 </br>' +
+            'Wedding ceremony 15:00</br>' +
+            'Wedding dinner</br>' +
+            '</br>' +
+            '<b>Sunday 17/9</b></br>' +
+            'Breakfast 08:30-10:00 </br>' +
+            'Boat to Räfnäs brygga 11:30</br></br>' +
+            'All times are preliminary and subject to change.'
       },
       toastMaster: {
         title: "Toastmaster",
-        text: "Patrik's brother Jonas will be toastmaster at the wedding. If you wish to give a speech or perform something else - please contact Jonas.",
+        text: "Pauline's brother Philip will be toastmaster at the wedding. If you wish to give a speech or perform something else - please contact Philip.",
       },
     },
   },

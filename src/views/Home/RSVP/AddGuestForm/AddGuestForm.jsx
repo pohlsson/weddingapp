@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./AddGuestForm.module.scss";
 import Input from "../../../../common/Input/Input";
 import Button, { ButtonTypes } from "../../../../common/Button/Button";
@@ -12,6 +12,8 @@ const AddGuestForm = ({ onCreateGuest }) => {
   const [guest, setGuest] = useState({});
   const language = useSelector((state) => state.language);
   const { addGuests } = strings[language];
+  const inputRef = useRef();
+
 
   const dropdownStyle = {
     option: (provided, state) => ({
@@ -46,6 +48,8 @@ const AddGuestForm = ({ onCreateGuest }) => {
     });
   };
 
+  setTimeout(() => inputRef?.current?.focus(), 150);
+
   return (
     <>
       <div className={styles.container}>
@@ -53,6 +57,7 @@ const AddGuestForm = ({ onCreateGuest }) => {
           <div className={styles.inputRow}>
             <span className={styles.label}>{addGuests.firstName}</span>
             <Input
+                ref={inputRef}
               onChange={(e) => setGuestProperty("firstName", e.target.value)}
             />
           </div>
@@ -62,20 +67,14 @@ const AddGuestForm = ({ onCreateGuest }) => {
               onChange={(e) => setGuestProperty("lastName", e.target.value)}
             />
           </div>
-          <div className={styles.inputRow}>
-            <span className={styles.label}>{addGuests.foodPreferences}</span>
-            <Input
-              onChange={(e) =>
-                setGuestProperty("foodPreferences", e.target.value)
-              }
-            />
-          </div>
         </div>
         <div className={styles.column}>
           <div className={styles.inputRow}>
-            <span className={styles.label}>{addGuests.other}</span>
+            <span className={styles.label}>{addGuests.foodPreferences}</span>
             <Input
-              onChange={(e) => setGuestProperty("notes", e.target.value)}
+                onChange={(e) =>
+                    setGuestProperty("foodPreferences", e.target.value)
+                }
             />
           </div>
           <div className={styles.inputRow}>

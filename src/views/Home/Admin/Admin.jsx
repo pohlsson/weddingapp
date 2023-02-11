@@ -10,16 +10,16 @@ const GuestRow = ({guest}) => {
         <div className={styles.guestRow}>
             <span>{guest.firstName}</span>
             <span>{guest.lastName}</span>
-            <span>{guest.addedBy}</span>
+            <a href={`MailTo: ${guest.addedBy} `}>{guest.addedBy}</a>
             <span>{guest.attendingDates}</span>
             <span>{guest.foodPreferences}</span>
-            <span>{guest.notes}</span>
         </div>
     )
 };
 
 const Admin = () => {
     const [addedGuests, setAddedGuests] = useState([]);
+    console.log(addedGuests);
 
     const fetchGuests = async () => {
         try {
@@ -43,7 +43,6 @@ const Admin = () => {
                 <span>Anmäld av</span>
                 <span>Datum</span>
                 <span>Matpreferenser</span>
-                <span>Övrigt</span>
             </div>
             <div className={styles.guestList}>
                 {addedGuests.map((guest) => <GuestRow guest={guest} key={guest.firstName} />)}

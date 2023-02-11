@@ -19,6 +19,14 @@
     box-shadow: 2px 1px 4px -3px #000000;
     border-radius: 4px;
 
+    &:hover {
+      .header {
+        .removeButton {
+          opacity: 1;
+        }
+      }
+    }
+
     @media (max-width: 1200px) {
       margin-right: 0;
     }
@@ -48,9 +56,6 @@
       .removeButton {
         opacity: 0;
         border: none;
-        &:hover {
-          opacity: 1;
-        }
 
         @media (max-width: 768px) {
           opacity: 1;

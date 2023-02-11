@@ -11,7 +11,11 @@ body {
   margin: 0;
   padding: 0;
   color: #6a615f;
+  font-family: "Open Sans";
+  font-weight: 300;
+}
 
+a {
 }
 
 :root {
@@ -56,6 +60,4 @@ body {
 @font-face {
   font-family: 'WilliamNarasi';
   src: local('WilliamNarasi'), url(./fonts/WilliamNarasi.otf) format('opentype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }

@@ -7,13 +7,12 @@ import Button from "../../../common/Button/Button";
 import { BrowserView, MobileView } from "react-device-detect";
 import { Turn as Hamburger } from "hamburger-react";
 import classNames from "classnames";
-import { useClickedOutside } from "../../../utils/hooks/useClickedOutside";
 import strings from "../../../localization/strings";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { setLanguage } from "../../../actions/uiActions";
 
-const Header = ({ rsvpRef, ourStoryRef, informationRef }) => {
+const Header = ({ ourStoryRef, informationRef }) => {
   const { signOut } = useAuthenticator();
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
   const dispatch = useDispatch();
@@ -39,7 +38,6 @@ const Header = ({ rsvpRef, ourStoryRef, informationRef }) => {
               <FontAwesomeIcon icon={faGlobe} className={styles.icon} />
               <span>{language === "swedish" ? "Svenska" : "English"}</span>
             </Button>
-            <Button onClick={signOut}>{header.logOut}</Button>
           </div>
         </header>
       </BrowserView>
@@ -56,9 +54,6 @@ const Header = ({ rsvpRef, ourStoryRef, informationRef }) => {
           )}
         >
           <div className={classNames(styles.item, styles.link)}>
-            <a onClick={() => scrollToRef(rsvpRef)}>{header.rsvp}</a>
-          </div>
-          <div className={classNames(styles.item, styles.link)}>
             <a onClick={() => scrollToRef(informationRef)}>
               {header.information}
             </a>
@@ -70,13 +65,6 @@ const Header = ({ rsvpRef, ourStoryRef, informationRef }) => {
           <div className={styles.item} onClick={changeLanguage}>
             <FontAwesomeIcon icon={faGlobe} className={styles.icon} />
             <span>{language === "swedish" ? "Svenska" : "English"}</span>
-          </div>
-          <div className={styles.item} onClick={signOut}>
-            <FontAwesomeIcon
-              icon={faRightFromBracket}
-              className={styles.icon}
-            />
-            <span>{header.logOut}</span>
           </div>
         </nav>
       </MobileView>

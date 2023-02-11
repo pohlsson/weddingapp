@@ -16,6 +16,8 @@ const RSVPContainer = ({pageRef}) => {
     const language = useSelector(state => state.language);
     const { addGuests } = strings[language];
 
+    setTimeout(() => this.ref.focus(), 150)
+
     const fetchGuests = async () => {
         try {
             const guestData = await API.graphql(graphqlOperation(listGuests));
@@ -32,8 +34,6 @@ const RSVPContainer = ({pageRef}) => {
             ...guest,
             addedBy: user.attributes.email,
         };
-
-        console.log("NEW GUEST", newGuest);
         await API.graphql(graphqlOperation(createGuest, { input: newGuest }));
         await fetchGuests();
     };
@@ -49,7 +49,7 @@ const RSVPContainer = ({pageRef}) => {
 
     return (
         <div className={styles.container}>
-            <SectionHeader pageRef={pageRef} text={addGuests.header} />
+            <SectionHeader pageRef={pageRef} title={addGuests.header} />
             <div className={styles.content}>
                 <div className={styles.addGuest}>
                     <AddGuestForm onCreateGuest={createNewGuest} />

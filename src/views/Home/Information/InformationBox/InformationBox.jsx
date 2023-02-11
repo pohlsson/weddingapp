@@ -5,7 +5,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 
 const InformationBox = ({ icon, title, text, children }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={styles.informationBox}>
