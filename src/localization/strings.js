@@ -67,7 +67,7 @@ const strings = {
         },
         {
           title: "31 december 2022",
-          text: "Det nya året firas i Åkersberga och snart flyttar Pauline och Patrik till deras lägenheten i Birkastan.",
+          text: "Det nya året firas i Åkersberga och snart flyttar Pauline och Patrik till deras lägenhet i Birkastan.",
         },
       ],
     },
@@ -87,7 +87,7 @@ const strings = {
       },
       children: {
         title: "Barn",
-        text: "Denna dag firar vi gärna med våra vuxna vänner och släktningar. Ammande barn är givetvis välkomna.",
+        text: "Denna dag firar vi gärna med våra vuxna vänner och släktingar. Ammande barn är givetvis välkomna.",
       },
       clothes: {
         title: "Klädsel",
@@ -102,19 +102,19 @@ const strings = {
         text:
             '\n' +
             '<b>Fredag 15/9</b></br>' +
-            'Båt från Räfnäs brygga kl 17.00</br>' +
+            'Båt från Räfnäs brygga 17:00</br>' +
             'Middag</br>' +
             'Bastu och badtunna</br>' +
             '</br>' +
             '<b>Lördag 16/9</b></br>' +
             'Lunch 12:00</br>' +
-            'Båt från Räfnäs brygga kl. 13:30</br>' +
-            'Vigselakt kl 15.00</br>' +
+            'Båt från Räfnäs brygga 13:30</br>' +
+            'Vigselakt 15.00</br>' +
             'Bröllopsmiddag</br>' +
             '</br>' +
             '<b>Söndag 17/9</b></br>' +
-            'Frukost kl. 08:30-10:00</br>' +
-            'Båt till Räfnäs brygga kl. 11:30</br></br>' +
+            'Frukost 08:30-10:00</br>' +
+            'Båt till Räfnäs brygga 11:30</br></br>' +
             'Tiderna är preliminära och kan komma att ändras närmare bröllopet.'
         ,
       },
@@ -152,45 +152,45 @@ const strings = {
       header: "Our story",
       story: [
         {
-          title: "20 august 2021",
+          title: "20 August 2021",
           text: "It's a match! Despite the long distance between Åkersberga and Aspudden, they manage to match when Patrik visits a friend.",
         },
         {
-          title: "25 august 2021",
+          title: "25 August 2021",
           text:
             '"See you for a coffee today?" The first date was a spontaneous coffee to-go under a tree in ' +
             "a park on a Wednesday afternoon. It was a successful date which led to further dates both on Friday and Sunday.",
         },
         {
-          title: "17 september 2021",
+          title: "17 September 2021",
           text: "When Pauline was helping Patrik install a new stove, Pauline injures her finger and gets a nasty infection. After the surgery, Pauline and Patrik figured that they were probably a couple.",
         },
         {
-          title: "2 october 2021",
+          title: "2 October 2021",
           text: "Patrik and Pauline decide to go to Lisbon together. A much-needed trip after all the fuss with finger infections.",
         },
         {
-          title: "25 februari 2022",
+          title: "25 Februari 2022",
           text: "On a romantic weekend in Mariestad, they decide to get married.",
     },
         {
-          title: "3 april 2022",
+          title: "3 April 2022",
           text: "The rings arrive in the mail and Partik and Pauline propose to each other outside the mail office in Åkersberga.",
         },
         {
-          title: "30 juli 2022",
+          title: "30 Juli 2022",
           text: "Patrik moves in with Pauline in Hornstull, and it begins with an outdoor cinema in the park.",
         },
         {
-          title: "4 august 2022",
+          title: "4 August 2022",
           text: "Two will be three, Patrik and Pauline are expecting!",
         },
         {
-          title: "8 august 2022",
+          title: "8 August 2022",
           text: "Hiking in the heat of Mallorca.",
         },
         {
-          title: "31 december 2022",
+          title: "31 December 2022",
           text: "The new year is celebrated in Åkersberga, and soon Pauline and Patrik will move to their new apartment in Birkastan.",
         },
       ],
@@ -224,7 +224,7 @@ const strings = {
       program: {
         title: "Program",
         text: '<b>Friday 15/9</b></br>' +
-            'Boat from Räfnäs brygga 17.00</br>' +
+            'Boat from Räfnäs brygga 17:00</br>' +
             'Dinner</br>' +
             'Sauna and hot tub</br>' +
             '</br>' +
