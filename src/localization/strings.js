@@ -100,23 +100,22 @@ const strings = {
       program: {
         title: "Program",
         text:
-            '\n' +
-            '<b>Fredag 15/9</b></br>' +
-            'Båt från Räfnäs brygga 17:00</br>' +
-            'Middag</br>' +
-            'Bastu och badtunna</br>' +
-            '</br>' +
-            '<b>Lördag 16/9</b></br>' +
-            'Lunch 12:00</br>' +
-            'Båt från Räfnäs brygga 13:30</br>' +
-            'Vigselakt 15.00</br>' +
-            'Bröllopsmiddag</br>' +
-            '</br>' +
-            '<b>Söndag 17/9</b></br>' +
-            'Frukost 08:30-10:00</br>' +
-            'Båt till Räfnäs brygga 11:30</br></br>' +
-            'Tiderna är preliminära och kan komma att ändras närmare bröllopet.'
-        ,
+          "\n" +
+          "<b>Fredag 15/9</b></br>" +
+          "Båt från Räfnäs brygga 16:45</br>" +
+          "Middag</br>" +
+          "Bastu och badtunna</br>" +
+          "</br>" +
+          "<b>Lördag 16/9</b></br>" +
+          "Lunch 12:00</br>" +
+          "Båt från Räfnäs brygga 13:30</br>" +
+          "Vigselakt 15.00</br>" +
+          "Bröllopsmiddag</br>" +
+          "</br>" +
+          "<b>Söndag 17/9</b></br>" +
+          "Frukost 08:30-10:00</br>" +
+          "Båt till Räfnäs brygga 11:00</br></br>" +
+          "Tiderna är preliminära och kan komma att ändras närmare bröllopet.",
       },
       toastMaster: {
         title: "Toastmaster",
@@ -172,7 +171,7 @@ const strings = {
         {
           title: "25 Februari 2022",
           text: "On a romantic weekend in Mariestad, they decide to get married.",
-    },
+        },
         {
           title: "3 April 2022",
           text: "The rings arrive in the mail and Partik and Pauline propose to each other outside the mail office in Åkersberga.",
@@ -223,20 +222,21 @@ const strings = {
       },
       program: {
         title: "Program",
-        text: '<b>Friday 15/9</b></br>' +
-            'Boat from Räfnäs brygga 17:00</br>' +
-            'Dinner</br>' +
-            'Sauna and hot tub</br>' +
-            '</br>' +
-            '<b>Saturday 16/9</b></br>' +
-            'Lunch 12:00</br> Boat from Räfnäs brygga 13:30 </br>' +
-            'Wedding ceremony 15:00</br>' +
-            'Wedding dinner</br>' +
-            '</br>' +
-            '<b>Sunday 17/9</b></br>' +
-            'Breakfast 08:30-10:00 </br>' +
-            'Boat to Räfnäs brygga 11:30</br></br>' +
-            'All times are preliminary and subject to change.'
+        text:
+          "<b>Friday 15/9</b></br>" +
+          "Boat from Räfnäs brygga 16:45</br>" +
+          "Dinner</br>" +
+          "Sauna and hot tub</br>" +
+          "</br>" +
+          "<b>Saturday 16/9</b></br>" +
+          "Lunch 12:00</br> Boat from Räfnäs brygga 13:30 </br>" +
+          "Wedding ceremony 15:00</br>" +
+          "Wedding dinner</br>" +
+          "</br>" +
+          "<b>Sunday 17/9</b></br>" +
+          "Breakfast 08:30-10:00 </br>" +
+          "Boat to Räfnäs brygga 11:00</br></br>" +
+          "All times are preliminary and subject to change.",
       },
       toastMaster: {
         title: "Toastmaster",
